@@ -45,7 +45,7 @@ path = "src/rospkg/__init__.py"
 
 [tool.hatch.build.targets.sdist]
 include = [
-    "/src",
+    "src/rospkg",
 ]
 
 [tool.hatch.build.targets.wheel]

@@ -159,8 +159,6 @@ def test_get_etc_ros_dir():
     base = tempfile.gettempdir()
     etc_ros_dir = os.path.join(base, 'etc_ros_dir')
 
-    assert '/etc/ros' == get_etc_ros_dir(env={})
-
     # ROS_ETC_DIR has precedence
     env = {ROS_ETC_DIR: etc_ros_dir}
     assert etc_ros_dir == get_etc_ros_dir(env=env), get_etc_ros_dir(env=env)

@@ -35,6 +35,7 @@ Access information about ROS package system environment variables.
 """
 
 import os
+import platform
 
 # Enviroment Variables
 
@@ -223,5 +224,6 @@ def get_etc_ros_dir(env=None):
         env = os.environ
     if ROS_ETC_DIR in env:
         return env[ROS_ETC_DIR]
-    else:
-        return '/etc/ros'
+    if platform.system() == "Windows":
+        return os.path.join(os.getenv('APPDATA'), 'ros')
+    return '/etc/ros'
